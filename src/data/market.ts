@@ -1,0 +1,5 @@
+import type { FundamentalSnapshot, MarketQuote } from '../types';
+// Deliberately illustrative values: never presented as live or verified.
+const updatedAt='2026-08-15T20:00:00Z';
+export const marketQuotes:MarketQuote[]=[['RKLB',24.18,1.3,11.2,0,44.1],['MU',124.80,-1.1,139,11.8,18.4],['SNDK',48.32,.6,18.4,14.2,-4.2],['NVDA',181.20,2.1,4420,31.5,25.7],['AMD',172.44,-.7,280,28.9,12.8],['AVGO',312.10,.4,1470,29.2,21.6],['PLTR',142.16,-2.4,337,89.6,36.4],['ASML',1044.30,1.0,412,33.1,19.2]].map(([ticker,price,dailyChangePct,marketCapB,forwardPE,ytdReturnPct])=>({ticker,price,dailyChangePct,marketCapB,forwardPE:forwardPE||null,ytdReturnPct,currency:'USD',updatedAt,quality:'sample'})) as MarketQuote[];
+export const fundamentals:FundamentalSnapshot[]=[['RKLB',32,null,27],['MU',48,76,39],['SNDK',12,18,34],['NVDA',55,62,72],['AMD',28,35,54],['AVGO',24,29,77],['PLTR',36,44,81],['ASML',18,22,52]].map(([ticker,revenueGrowthPct,epsGrowthPct,grossMarginPct])=>({ticker,revenueGrowthPct,epsGrowthPct,grossMarginPct,period:'Illustrative snapshot',updatedAt:'2026-08-01T00:00:00Z',quality:'sample'})) as FundamentalSnapshot[];
